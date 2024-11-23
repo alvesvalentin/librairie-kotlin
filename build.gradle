@@ -17,6 +17,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://repo.maven.apache.org/maven2") }
 }
 
 dependencies {
@@ -34,8 +35,6 @@ dependencies {
 	testImplementation 'org.testcontainers:junit-jupiter'
 	testImplementation 'org.testcontainers:postgresql'
 	testImplementation 'org.assertj:assertj-core:3.26.3'
-	testImplementation 'io.cucumber:cucumber-java'
-	testImplementation 'io.cucumber:cucumber-junit'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
@@ -51,6 +50,6 @@ allOpen {
 	annotation 'jakarta.persistence.Embeddable'
 }
 
-tasks.named('test') {
+test {
 	useJUnitPlatform()
 }
